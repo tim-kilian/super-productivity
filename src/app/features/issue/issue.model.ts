@@ -3,6 +3,7 @@ import {
   JiraIssueReduced,
 } from './providers/jira/jira-issue/jira-issue.model';
 import { JiraCfg } from './providers/jira/jira.model';
+import { YoutrackCfg } from './providers/youtrack/youtrack.model';
 import { GithubCfg } from './providers/github/github.model';
 import {
   GithubIssue,
@@ -16,8 +17,8 @@ import {
 } from './providers/caldav/caldav-issue/caldav-issue.model';
 import { CaldavCfg } from './providers/caldav/caldav.model';
 
-export type IssueProviderKey = 'JIRA' | 'GITHUB' | 'GITLAB' | 'CALDAV';
-export type IssueIntegrationCfg = JiraCfg | GithubCfg | GitlabCfg;
+export type IssueProviderKey = 'JIRA' | 'YOUTRACK' | 'GITHUB' | 'GITLAB' | 'CALDAV';
+export type IssueIntegrationCfg = JiraCfg | YoutrackCfg | GithubCfg | GitlabCfg;
 
 export enum IssueLocalState {
   OPEN = 'OPEN',
@@ -28,6 +29,7 @@ export enum IssueLocalState {
 export interface IssueIntegrationCfgs {
   // should be the same as key IssueProviderKey
   JIRA?: JiraCfg;
+  YOUTRACK?: YoutrackCfg;
   GITHUB?: GithubCfg;
   GITLAB?: GitlabCfg;
   CALDAV?: CaldavCfg;
